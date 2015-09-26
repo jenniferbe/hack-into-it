@@ -8,8 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def hello_world():
 	if request.method == 'POST':
-    	#query(request.form['marital'], request.form['employment'])
-    	return query('divorced', 'employed')
+		return query(request.form['marital'], request.form['employment'])
 	return render_template('index.html', name=None)
 
 

@@ -9,10 +9,12 @@ con = lite.connect('people.db')
 def query(marriage_status, employment_status):
     with con:   
         cur = con.cursor()    
-        cur.execute("SELECT * FROM people WHERE marriage_status = " + marriage_status +
-                    " AND employment_status = " + employment_status + " ORDER BY click_count desc LIMIT 5")
+        cur.execute("SELECT * FROM people WHERE marriage_status = '" + marriage_status +
+                    "' AND employment_status = '" + employment_status + "' ORDER BY click_count desc LIMIT 5")
         rows = cur.fetchall()
+        posts = ""
         for row in rows:
-        	print row
+        	posts += "\n%s" % str(row[2])
+       	return posts
 
 
