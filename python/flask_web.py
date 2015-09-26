@@ -6,7 +6,6 @@ from query_data import query
 app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
-@app.route('/<marital>/<employment>')
 
 def hello_world():
 	if request.method == 'POST':

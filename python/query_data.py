@@ -10,9 +10,11 @@ def query(ms, es):
         cur = con.cursor()
         cur.execute("SELECT * FROM people WHERE marriage_status=? AND employment_status=? GROUP BY post_id ORDER BY click_count LIMIT 5"
             , (ms, es,))
+        posts = ""
         rows = cur.fetchall()
         for row in rows:
-            print row
+            posts+=str(row)
+        return posts
     con.close()
 
 def increment_click_count(post_id):
