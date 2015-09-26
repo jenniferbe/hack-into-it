@@ -38,14 +38,25 @@
     </div>
     <br>
     <div class="question">
-      <div class="title">What is your marital status?</div>
-      <form>
-        <input type="radio" name="status" value="Single" checked> Single
+      <div class="title marital">What is your marital status?</div>
+      <form action="/" method="post">
+        <input type="radio" name="marital" value="Single" checked> Single
         <br>
-        <input type="radio" name="status" value="Married"> Married
+        <input type="radio" name="marital" value="Married"> Married
         <br>
-        <input type="radio" name="status" value="Divorced" checked> Divorced
+        <input type="radio" name="marital" value="Divorced" > Divorced
         <br>
+      </form>
+    </div>
+    <br>
+    <div class="question">
+      <div class="title">What is your employment status?</div>
+      <form action="/" method="post" >
+        <input type="radio" name="employment" value="Employed" checked> Single
+        <br>
+        <input type="radio" name="employment" value="Unemployed"> Married
+        <br>
+        <input type="submit" value="Submit">
       </form>
     </div>
     </div>
