@@ -6,9 +6,11 @@ from query_data import query
 app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
+@app.route('/<marital>/<employment>')
+
 def hello_world():
 	if request.method == 'POST':
-		return query(request.form['marital'], request.form['employment'])
+		return render_template('posts.html', name=None)
 	return render_template('index.html', name=None)
 
 
