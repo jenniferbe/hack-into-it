@@ -12,12 +12,9 @@ c.execute('''CREATE TABLE people
 for row in csv_f:
   for s in row:
     text = row[2]
-    click_count = 0
     marriage_status = ""
     employment_status = ""
-    if "single in text" or "not married" in text:
-        marriage_status = "single"
-    if "husband" in text or "wife" in text or "married" in text:
+    if "husband" in text or "wife" in text or "married" in text or "spouse" in text:
         marriage_status = "married"
     if "single mom" in text or "single dad" in text or "divorced" in text or "single parent" in text:
         marriage_status = "divorced"
@@ -41,7 +38,7 @@ conn.commit()
 # Just be sure any changes have been committed or they will be lost.
 conn.close()
 
-
+     ####
 
 
 

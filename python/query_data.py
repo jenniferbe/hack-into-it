@@ -4,17 +4,23 @@
 import sqlite3 as lite
 import sys
 
-con = lite.connect('people.db')
-
-def query(marriage_status, employment_status):
-    with con:   
-        cur = con.cursor()    
-        cur.execute("SELECT * FROM people WHERE marriage_status = '" + marriage_status +
-                    "' AND employment_status = '" + employment_status + "' ORDER BY click_count desc LIMIT 5")
+def query(ms, es):
+    con = lite.connect('people.db')
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM people WHERE marriage_status=? AND employment_status=? GROUP BY post_id ORDER BY click_count LIMIT 5"
+            , (ms, es,))
         rows = cur.fetchall()
-        posts = ""
         for row in rows:
-        	posts += "\n%s" % str(row[2])
-       	return posts
+            print row
+    con.close()
+
+def increment_click_count(post_id):
+    con = lite.connect('people.db')
+    with con:
+        cur = con.cursor() 
+        cur.execute("UPDATE people SET click_count=click_count + 1 WHERE post_id=?" , (post_id,)) 
+    con.close()
 
 
+           #####
