@@ -1,16 +1,16 @@
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
-// bower:scss
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// endbower
 
-h1.logo {
+header {
   display: block;
   width: 100%;
   position: fixed;
   top: 0px;
   text-align: center;
-  background-color: rgb(0, 200, 200);
+}
+
+section.mainbody.questions {
+  margin-top: 100px;
+  top: 200px;
 }
 
 /* Space out content a bit */
