@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-        <title>PhiRhoCious</title> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="images/favicon.png">
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
-</head>
-<body>
-        <header>
-            <h1 class="logo">PhiRhocious</h1>
-        </header>
-        <section class="mainbody questions">
-                <div class="questions">
-                    <div class="question">
-                        <div class="title">Whats your name?</div>
-                        <div class-"response">   </div>
-                    </div>
-                    <div class="question">
-                        <div class="title">How old are you?</div>
-                        <div class-"response">   </div>
-                    </div>
-                    <div class="question">
-                        <div class="title">Are you married?</div>
-                        <div class-"response">   </div>
-                    </div>
 
-                    
-                </div>
-     </section>
+<head>
+  <title>PhiRhoCious</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="logo">PhiRhocious</h1>
+  </header>
+  <section class="mainbody questions">
+    <div class="questions">
+      <div class="question">
+        <div class="title">What's your name?</div>
+        <div class- "response"></div>
+        <form>
+          <input type="text" name="firstname">
+        </form>
+      </div>
+    </div>
+    <br>
+    <div class="question">
+      <div class="title">How old are you?</div>
+      <div class- "response"> </div>
+      <select>
+        <option value="Under 18">Under 18</option>
+        <option value="18-25">18-24</option>
+        <option value="mercedes">25-34</option>
+        <option value="audi">35-44</option>
+        <option value="Under 18">45-54</option>
+        <option value="Under 18">55 and older</option>
+      </select>
+    </div>
+    <br>
+    <div class="question">
+      <div class="title">What is your marital status?</div>
+      <form>
+        <input type="radio" name="status" value="Single" checked> Single
+        <br>
+        <input type="radio" name="status" value="Married"> Married
+        <br>
+        <input type="radio" name="status" value="Divorced" checked> Divorced
+        <br>
+      </form>
+    </div>
+    </div>
+  </section>
 </body>
+
 </html>
