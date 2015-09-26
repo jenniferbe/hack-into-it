@@ -23,7 +23,14 @@ for row in csv_f:
     else:
         employment_status = "employed"
     # Insert a row of data
-    c.execute("INSERT INTO people VALUES (" + row[0] + ", " + row[1] + ", " + row[2] + ", " + row[3] + ", " + row[4] + ", " + row[5] + ", " + row[6] + ", " + row[7] + ", " + row[8] + ", 0, " + marriage_status + ", " + employment_status + ")")
+    c.execute('''INSERT INTO people(post_id, subject, details, created_at,
+        platform, question_tags, state, reply, replied, click_count, marriage_status, employment_status)
+        VALUES(:post_id,:subject, :details, :created_at, :platform, :question_tags, :state,
+               :reply, :replied, :click_count, :marriage_status, :employment_status)''',
+               {'post_id':row[0], 'subject':row[1], 'details':row[2], 'created_at':row[3],
+                'platform':row[4], 'question_tags':row[5], 'state':row[6], 'reply':row[7],
+                'replied':row[8], 'click_count':0, 'marriage_status':marriage_status,
+                'employment_status':employment_status})
 
 # Save (commit) the changes
 conn.commit()
